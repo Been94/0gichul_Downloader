@@ -84,49 +84,55 @@ namespace _0gichul_DownLoader
         }
         public String Answer_Query(String url)
         {
-            int speed = 0;
-
-            Thread thread = new Thread(new ThreadStart(delegate () // thread 생성
-            {
-                this.Invoke(new Action(delegate ()
-                {
-                    speed = comboBox1.SelectedIndex;
-                }));
-            }));
-            thread.Start();
-
-            switch (speed)
-            {
-                case 0:
-                    Thread.Sleep(1000);
-                    break;
-                case 1:
-                    Thread.Sleep(500);
-                    break;
-                case 2:
-                    Thread.Sleep(1);
-                    break;
-                default:
-                    break;
-            }
-
-
-
             string responseText = string.Empty;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "GET";
-            request.Timeout = 30000;
-            request.KeepAlive = false;
-            using (HttpWebResponse resp = (HttpWebResponse)request.GetResponse())
+            try
             {
-                Stream respStream = resp.GetResponseStream();
-                using (StreamReader sr = new StreamReader(respStream))
+                int speed = 0;
+
+                Thread thread = new Thread(new ThreadStart(delegate () // thread 생성
                 {
-                    responseText = sr.ReadToEnd();
+                    this.Invoke(new Action(delegate ()
+                    {
+                        speed = comboBox1.SelectedIndex;
+                    }));
+                }));
+                thread.Start();
+
+                switch (speed)
+                {
+                    case 0:
+                        Thread.Sleep(1000);
+                        break;
+                    case 1:
+                        Thread.Sleep(500);
+                        break;
+                    case 2:
+                        Thread.Sleep(1);
+                        break;
+                    default:
+                        break;
                 }
-                
+
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "GET";
+                request.Timeout = 30000;
+                request.KeepAlive = false;
+                using (HttpWebResponse resp = (HttpWebResponse)request.GetResponse())
+                {
+                    Stream respStream = resp.GetResponseStream();
+                    using (StreamReader sr = new StreamReader(respStream))
+                    {
+                        responseText = sr.ReadToEnd();
+                    }
+
+                }
+                request.Abort();
+            }catch(WebException e)
+            {
+                Console.WriteLine(e);
+                MessageBox.Show("서버 불안정으로 인해 작업이 중지되었습니다.\n\n 느린 속도로 변경해주세요.");
             }
-            request.Abort();
             var match = Regex.Match(responseText, "\"(https://0gichul.com.*/(.*))\"");
             return match.ToString().Trim().ToString().Replace("\"","").ToString().Trim().ToString();
         }
