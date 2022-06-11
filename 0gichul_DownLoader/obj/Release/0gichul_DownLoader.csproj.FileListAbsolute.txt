@@ -1,0 +1,12 @@
+C:\Users\admin\source\repos\0gichul_DownLoader\0gichul_DownLoader\bin\Release\0gichul_DownLoader.exe.config
+C:\Users\admin\source\repos\0gichul_DownLoader\0gichul_DownLoader\bin\Release\0gichul_DownLoader.exe
+C:\Users\admin\source\repos\0gichul_DownLoader\0gichul_DownLoader\bin\Release\0gichul_DownLoader.pdb
+C:\Users\admin\source\repos\0gichul_DownLoader\0gichul_DownLoader\bin\Release\NSoup.dll
+C:\Users\admin\source\repos\0gichul_DownLoader\0gichul_DownLoader\obj\Release\0gichul_DownLoader.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\0gichul_DownLoader\0gichul_DownLoader\obj\Release\_0gichul_DownLoader.Form1.resources
+C:\Users\admin\source\repos\0gichul_DownLoader\0gichul_DownLoader\obj\Release\_0gichul_DownLoader.Properties.Resources.resources
+C:\Users\admin\source\repos\0gichul_DownLoader\0gichul_DownLoader\obj\Release\0gichul_DownLoader.csproj.GenerateResource.cache
+C:\Users\admin\source\repos\0gichul_DownLoader\0gichul_DownLoader\obj\Release\0gichul_DownLoader.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\0gichul_DownLoader\0gichul_DownLoader\obj\Release\0gichul_DownLoader.csproj.CopyComplete
+C:\Users\admin\source\repos\0gichul_DownLoader\0gichul_DownLoader\obj\Release\0gichul_DownLoader.exe
+C:\Users\admin\source\repos\0gichul_DownLoader\0gichul_DownLoader\obj\Release\0gichul_DownLoader.pdb
